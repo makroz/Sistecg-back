@@ -28,10 +28,12 @@ class PersonaController extends Controller
   public function update(Request $request, Persona $persona)
   {
     $persona->update($request->all());
+    return response()->json(['status' => 'ok']);
   }
 
   public function destroy(Persona $persona)
   {
     $persona->delete();
+    return response()->json(['status' => 'ok']);
   }
 }
